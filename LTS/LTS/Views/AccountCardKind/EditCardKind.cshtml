@@ -1,0 +1,47 @@
+﻿@model EntityLayer.Concrete.AccountCardKind
+@{
+    ViewData["Title"] = "EditCardKind";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Hesap Kart Tür Güncelleme Formu</h1>
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-box">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h4 class="header-title"> Hesap Kart Tür Güncelleme </h4>
+                                <br />
+                                <br />
+
+
+                                <form class="form-group" method="post" asp-controller="AccountCardKind" asp-action="EditCardKind">
+                                    <input type="hidden" asp-for="@Model.Id" />
+                                    <div class="form-group">
+                                        <label for="KindName">Tür Adı</label>
+                                        <input asp-for="@Model.KindName" type="text" name="KindName" parsley-trigger="change" required placeholder="Tür Adı" class="form-control" id="KindName">
+                                    </div>
+
+                                    <br />
+                                    <input type="submit" class="btn btn-outline-orange btn-rounded waves-light waves-effect width-md" />
+
+                                </form>
+
+                                <a asp-controller="AccountCardKind" asp-action="Index" class="btn btn-outline-orange btn-rounded waves-light waves-effect width-md"> Hesap Kart Türü Listesine Geri Dön</a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

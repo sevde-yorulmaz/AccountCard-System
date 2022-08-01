@@ -1,0 +1,122 @@
+﻿@model AddAccountCardViewModel
+@{
+    ViewData["Title"] = "AddAccountCard";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Hesap Kart Oluşturma Formu</h1>
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-box">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                                <h4 class="header-title">Hesap Kart Oluşturma</h4>
+
+                                <div class="p-4">
+
+                                    <form asp-controller="AccountCard" asp-action="AddAccountCard" method="post" data-parsley-validate novalidate>
+
+                                        <div class="form-group">
+                                            <select asp-for="accountCard.AccountCardGroupId">
+                                                @foreach (var item in Model.cardGroups)
+                                                {
+                                                    <option value="@item.Id">@item.GroupName</option>
+
+                                                }
+                                            </select>
+
+
+                                        </div>
+                                        <div class="form-group">
+                                            <select asp-for="accountCard.AccountCardSubGroupId">
+                                                @foreach (var item in Model.cardSubGroups)
+                                                {
+                                                    <option value="@item.Id">@item.Name</option>
+
+                                                }
+                                            </select>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <select asp-for="accountCard.AccountCardKindId">
+                                                @foreach (var item in Model.cardKinds)
+                                                {
+                                                    <option value="@item.Id">@item.KindName</option>
+
+                                                }
+                                            </select>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <select asp-for="accountCard.AccountCardTypeId">
+                                                @foreach (var item in Model.cardTypes)
+                                                {
+                                                    <option value="@item.Id">@item.TypeName</option>
+
+                                                }
+                                            </select>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label asp-for="@Model.degree">Ünvan Adı</label>
+                                            <input asp-for="@Model.degree" type="text" name="degree" parsley-trigger="change" required placeholder="Ünvan Adı" class="form-control" id="degree">
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="@Model.address">Adres</label>
+                                            <textarea asp-for="@Model.address" type="text" name="address" parsley-trigger="change" required="" placeholder="Adres" class="form-control" id="address"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="@Model.tcNo">TcNo</label>
+                                            <input asp-for="@Model.tcNo" type="text" name="tcNo" parsley-trigger="change" required placeholder="Tc No" class="form-control" id="tcNo">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="@Model.taxNumber">Vergi Numarası</label>
+                                            <input asp-for="@Model.taxNumber" type="text" name="taxNumber" parsley-trigger="change" required placeholder="Vergi Numarası" class="form-control" id="taxNumber">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="@Model.taxAdministration">Vergi Adı</label>
+                                            <input asp-for="@Model.taxAdministration" type="text" name="taxAdministration" parsley-trigger="change" required placeholder="Vergi Adı" class="form-control" id="taxAdministration">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="checkbox checkbox-purple">
+                                                <input id="status" name="status" asp-for="@Model.status" type="checkbox" value="true" checked="">
+                                                <label asp-for="@Model.status"> Hesap Kart Durumu </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group account-btn text-center mt-2">
+                                            <div class="col-12">
+                                                <button class="btn btn-outline-orange btn-rounded waves-light waves-effect width-md" type="submit">Hesap Kart Oluştur</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                    <a asp-controller="AccountCard" asp-action="Index" class="btn btn-outline-orange btn-rounded waves-light waves-effect width-md"> Hesap Kart Listesine Geri Dön</a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

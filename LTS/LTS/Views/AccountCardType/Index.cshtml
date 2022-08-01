@@ -1,0 +1,93 @@
+﻿@using EntityLayer.Concrete;
+@model List<AccountCardType>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a asp-controller="AccountCardType" asp-action="Index">Hesap Kart Tipi</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h5 class="header-title">Hesap Kart Tipi Listesi</h5>
+                            <div class="table-responsive">
+
+                                <br />
+                                <table class="table table-centered mb-0" id="btn-editable">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Kart Tipi Adı</th>
+                                            <th>Durumu</th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Id</td>
+                                                <td>@item.TypeName</td>
+                                                <td>@item.Status</td>
+                                                <td><a href="/AccountCardType/EditCardType/@item.Id" class="btn btn-icon waves-effect waves-light btn-warning"> <i class="fas fa-wrench"></i> </a></td>
+                                                <td><a href="/AccountCardType/DeleteCardType/@item.Id" class="btn btn-icon waves-effect waves-light btn-danger"> <i class="fas fa-times"></i> </a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <a asp-controller="AccountCardType" asp-action="AddCardType" class="btn btn-outline-orange btn-rounded waves-light waves-effect width-md">Yeni Hesap Kart Tipi Ekle</a>
+
+
+                            </div>
+                            <!-- end .table-responsive-->
+                        </div>
+                        <!-- end card-body -->
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+
+        </div>
+        <!-- end container-fluid -->
+
+    </div>
+    <!-- end content -->
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    @DateTime.Now.Year &copy; Hesap Kart İşlemleri Sistemi <a href="#">Sevde Yorulmaz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end Footer -->
+
+</div>
+
+

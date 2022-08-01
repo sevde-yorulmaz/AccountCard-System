@@ -1,0 +1,44 @@
+﻿<!-- ========== Left Sidebar Start ========== -->
+<div class="left-side-menu">
+
+    <div class="slimscroll-menu">
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+
+            <ul class="metismenu" id="side-menu">
+
+                <li>
+                    <a href="javascript: void(0);" class="waves-effect waves-light">
+                        <i class="mdi mdi-view-dashboard"></i>
+                        <span class="badge badge-success badge-pill float-right">2</span>
+                        <span>  Tanımlar  </span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                            <a >Hesap Kart Tanımları</a>
+                            <ul class="nav-second-level" aria-expanded="false">
+
+                                <li><a asp-controller="AccountCard" asp-action="Index">Hesap Kart Liste</a></li>
+                                <li><a asp-controller="AccountCard" asp-action="AddAccountCard">Hesap Kart Giriş</a></li>
+                                <li><a asp-controller="AccountCardType" asp-action="Index">Hesap Kart Tip Tanımı</a></li>
+                                <li><a asp-controller="AccountCardKind" asp-action="Index">Hesap Kart Tür Tanımı</a></li>
+                                <li><a asp-controller="AccountCardGroup" asp-action="Index">Hesap Kart Grup Tanımı</a></li>
+                                <li><a asp-controller="AccountCardSubGroup" asp-action="Index">Hesap Kart Alt Grup Tanımı</a></li>
+                                
+                            </ul>
+
+                        </li>
+                        <li><a asp-controller="User" asp-action="GetUser">Kullanıcı Tanımları</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <!-- End Sidebar -->
+
+    </div>
+    <!-- Sidebar -left -->
+
+</div>
+<!-- Left Sidebar End -->

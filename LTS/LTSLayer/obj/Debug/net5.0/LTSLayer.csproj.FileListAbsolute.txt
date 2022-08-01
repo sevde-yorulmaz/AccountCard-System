@@ -1,0 +1,12 @@
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\bin\Debug\net5.0\LTSLayer.deps.json
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\bin\Debug\net5.0\LTSLayer.dll
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\bin\Debug\net5.0\LTSLayer.pdb
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\obj\Debug\net5.0\LTSLayer.csproj.AssemblyReference.cache
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\obj\Debug\net5.0\LTSLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\obj\Debug\net5.0\LTSLayer.AssemblyInfoInputs.cache
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\obj\Debug\net5.0\LTSLayer.AssemblyInfo.cs
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\obj\Debug\net5.0\LTSLayer.csproj.CoreCompileInputs.cache
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\obj\Debug\net5.0\LTSLayer.dll
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\obj\Debug\net5.0\refint\LTSLayer.dll
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\obj\Debug\net5.0\LTSLayer.pdb
+C:\Users\cemom\Desktop\LTS Yazılım\LTS\LTSLayer\obj\Debug\net5.0\ref\LTSLayer.dll

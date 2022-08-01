@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.AccountCardSubGroup
+@{
+    ViewData["Title"] = "EditCardSubGroup";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Hesap Kart Alt Grup Güncelleme Formu</h1>
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-box">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h4 class="header-title"> Hesap Kart Alt Grup Güncelleme </h4>
+                                <br />
+                                <br />
+
+
+                                <form class="form-group" method="post" asp-controller="AccountCardSubGroup" asp-action="EditCardSubGroup">
+                                    <input type="hidden" asp-for="@Model.Id" />
+                                    <div class="form-group">
+                                        <label for="Name">Alt Grup Adı</label>
+                                        <input asp-for="@Model.Name" type="text" name="Name" parsley-trigger="change" required placeholder="Alt Grup Adı" class="form-control" id="Name">
+                                    </div>
+
+                                    <br />
+                                    <input type="submit" class="btn btn-outline-orange btn-rounded waves-light waves-effect width-md" />
+
+                                </form>
+
+                                <a asp-controller="AccountCardSubGroup" asp-action="Index" class="btn btn-outline-orange btn-rounded waves-light waves-effect width-md"> Hesap Kart Alt Grup Listesine Geri Dön</a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

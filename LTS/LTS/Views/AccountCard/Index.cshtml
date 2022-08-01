@@ -1,0 +1,99 @@
+﻿@model GetAllAccountCardViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+         
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <h5 class="header-title">Hesap Kart Listesi</h5>
+                            <div class="table-responsive">
+                                <a asp-controller="AccountCard" asp-action="AddAccountCard" class="btn btn-icon waves-effect waves-light btn-success"> Yeni Hesap Kart Oluştur </a>
+                                <a asp-controller="AccountCardKind" asp-action="AddCardKind" class="btn btn-icon waves-effect waves-light btn-success"> Yeni Hesap Türü Ekle </a>
+                                <a asp-controller="AccountCardType" asp-action="AddCardType" class="btn btn-icon waves-effect waves-light btn-success"> Yeni Hesap Tipi Ekle </a>
+                                <br />
+                                <table class="table table-centered mb-0" id="btn-editable">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Ünvan</th>
+                                            <th>Vergi Dairesi</th>
+                                            <th>Vergi No</th>
+                                            <th>TC No</th>
+                                            <th>Adres</th>
+                                            <th>Hesap Kart Tipi</th>
+                                            <th>Hesap Kart Türü</th>
+                                            <th>Hesap Kart Grubu</th>
+                                            <th>Hesap Kart Alt Grubu</th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach (var item in Model.cards)
+                                        {
+                                            <tr>
+                                                <td>@item.Id</td>
+                                                <td>@item.Degree</td>
+                                                <td>@item.TaxAdministration</td>
+                                                <td>@item.TaxNumber</td>
+                                                <td>@item.TCNo</td>
+                                                <td>@item.Address</td>
+                                                <td>@Model.cardTypes.Where(x=>x.Id==item.AccountCardTypeId).FirstOrDefault().TypeName</td>
+                                                <td>@Model.cardKinds.Where(x=>x.Id==item.AccountCardKindId).FirstOrDefault().KindName</td>
+                                                <td>@Model.cardGroups.Where(x=>x.Id==item.AccountCardGroupId).FirstOrDefault().GroupName</td>
+                                                <td>@Model.cardSubGroups.Where(x=>x.Id==item.AccountCardSubGroupId).FirstOrDefault().Name</td>
+                                                <td><a href="/AccountCard/EditAccountCard/@item.Id" class="btn btn-icon waves-effect waves-light btn-warning"> <i class="fas fa-wrench"></i> </a></td>
+                                                <td><a href="/AccountCard/DeleteAccountCard/@item.Id" class="btn btn-icon waves-effect waves-light btn-danger"> <i class="fas fa-times"></i> </a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <a asp-controller="AccountCard" asp-action="AddAccountCard" class="btn btn-outline-orange btn-rounded waves-light waves-effect width-md">Yeni Hesap Kart Ekle</a>
+
+                            </div>
+                            <!-- end .table-responsive-->
+                        </div>
+                        <!-- end card-body -->
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+
+        </div>
+        <!-- end container-fluid -->
+
+    </div>
+    <!-- end content -->
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    @DateTime.Now.Year &copy; Hesap Kart İşlemleri Sistemi <a href="#">Sevde Yorulmaz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end Footer -->
+
+</div>
+
+

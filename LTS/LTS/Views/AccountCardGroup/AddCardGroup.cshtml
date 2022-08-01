@@ -1,0 +1,53 @@
+﻿@using EntityLayer.Concrete;
+@model AccountCardGroup
+@{
+    ViewData["Title"] = "AddCardGroup";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Hesap Kart Grup Ekleme Formu</h1>
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-box">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                                <h4 class="header-title">Yeni Hesap Kart Grup Ekleme</h4>
+
+                                <div class="p-4">
+                                    <form asp-controller="AccountCardGroup" asp-action="AddCardGroup" method="post" data-parsley-validate novalidate>
+                                        <div class="form-group">
+                                            <label for="GroupName"> Grup Adı</label>
+                                            <input asp-for="GroupName" type="text" name="GroupName" parsley-trigger="change" required placeholder="Grup Adı" class="form-control" id="GroupName" />
+                                        </div>
+
+
+                                        <div class="form-group text-right mb-0">
+                                            <button class="btn btn-primary waves-effect waves-light" type="submit">
+                                                Yeni Hesap Kart Grup Ekle
+                                            </button>
+
+                                        </div>
+
+                                    </form>
+                                    <a asp-controller="AccountCardGroup" asp-action="Index" class="btn btn-outline-orange btn-rounded waves-light waves-effect width-md"> Hesap Kart Grup Listesine Geri Dön</a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
